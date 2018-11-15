@@ -1,0 +1,102 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @txlz2
+Sign out
+ Watch 0
+ Star 0  Fork 0 txlz2/txlz2
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+Branch: master Find file Copy path txlz2/index (7).html
+fa449d4  11 hours ago
+@txlz2 txlz2 Add files via upload
+1 contributor
+RawBlameHistory     
+71 lines (70 sloc)  1.97 KB
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 960px;
+				height: 200px;
+				background-color: wheat;
+				padding:40px;	
+			}
+			#div2{
+				width: 960px;
+				height: 200px;
+				background-color: antiquewhite;
+				padding:40px;	
+			}
+			p{
+				color: cyan;
+				font-size: 30px;
+			}
+			a{
+				display: block;
+				text-decoration: none;
+				color: coral;
+				font-size: 30px;
+			}
+		</style>
+		<script>
+					function createPopup() {
+					var	x = document.createElement("a");
+					var	y = document.createTextNode("这是第一个a元素");
+						x.appendChild(y);
+						z=document.getElementById("div1");
+						z.appendChild(x);
+						x.style.backgroundColor="red";
+						x.style.color="yellow";
+					}
+					function mOver(obj){
+	                          obj.innerHTML="帅"
+                    }
+                    function mOut(obj){
+	                obj.innerHTML="李老师帅不帅？"
+	                }
+                    function mozCancelRequestAnimationFrame(){
+						var div=document.getElementById("div2")
+						var y=div.childNodes;
+						for (i=0;i<y.length;i++){
+							if (y[i].tagName=="A")	div.removeChild(y[i])
+						}
+//						x.removeChild(x.childNode[0]);
+					}
+				</script>
+	</head>
+	<body>
+		<div id="div1">
+			<p>这是第一个a元素</p>
+			<div onmouseover="mOver(this)" onmouseout="mOut(this)"><p>这是第二个a元素</p></div>
+			<button onclick="createPopup()" onmouseover="style.color='red'"onmouseout="style.color='black'">
+                      添加元素</button>
+		</div>
+		    <div id="div2">
+				<a  onclick="this.innerHTML='嘻嘻'">李老师真帅</a>
+				<a  onclick="this.innerHTML='哈哈'">李老师真帅</a>
+				<a  onclick="this.innerHTML='Yeah!Yeah!'">李老师真帅</a>
+		<button onclick="mozCancelRequestAnimationFrame()"  onmouseover="style.color='blue'"onmouseout="style.color='black'">删除元素</button>
+		</div>
+	</body>
+</html>
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
