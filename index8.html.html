@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script type="text/javascript">
+    		window.onload=function(){
+    			var tab=document.getElementById("t");
+    			var body=document.getElementsByTagName("body");
+    			var trs=document.getElementsByTagName("tr");
+    			for(var i=0;i<trs.length;i++){
+    				trs[i].className=(i%2==0)?"even":"odd";
+    			}
+    		}
+    		 function add() {
+				var tab = document.getElementById('t');
+				var rowIndex = tab.rows.length + 1;
+
+				//添加一行;
+				var tr = tab.insertRow();
+				var name1 = document.getElementById("xingming").value;
+				var sex1 = document.getElementById("sex").value;
+				tr.onmouseover = tr.className = "displayStyle";
+				tr.onmouseout = tr.className = "hideStyle";
+				tr.onclick = function() {
+					this.className = "onClickChangeStyle(this)";
+				}
+
+				var th1 = tr.insertCell();
+				var th2 = tr.insertCell();
+				var th3 = tr.insertCell();
+				var th4 = tr.insertCell();
+
+				th1.innerHTML = "" + rowIndex-1;
+				th2.innerHTML = name1;
+				th3.innerHTML = sex1;
+				th4.innerHTML = "<a href='#' onclick='del(this)'>删除</a>";
+				initRows(tab);
+			}
+
+    		function del(obj) {
+				var tab = document.getElementById('t');
+
+            var tr = obj.parentNode.parentNode;
+
+				if(tab.rows.length > 1) {
+					//tr.parentNode，指的是，table对象;移除子节点;
+					tr.parentNode.removeChild(tr);
+				}
+				//重新生成行号;
+				initRows(document.getElementById('t'));
+			}
+    </script>
+		<style type="text/css">
+			td {
+				width: 120px;
+			}
+			
+			.t1 {
+				width: 100px;
+				height: 60px;
+				margin: auto auto;
+				border: 5px solid;
+				background-color: pink;
+			}
+			.c2 {
+				width: 110px;
+				height: 50px;
+				margin-top: -50px;
+				margin-left: 530px;
+				/*	background-color: #F5DEB3;*/
+			}
+			tr:first-child{
+				color: white;
+				background-color:palevioletred !important;
+			}
+			tr:nth-child(2n){
+				background-color: pink;
+			}
+			tr:nth-child(2n+1){
+				background-color: plum;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<a >姓名:
+			<input type="text" id="xingming" style=height:30px; style="width: 50px;">
+		</a>
+		<a id="sex" >性别:
+					<input type="radio" id="sex" name="sex" value="男" / style=height:30px; style="width: 50px;">男
+					<input type="radio" id="sex" name="sex" value="女" / style=height:30px; style="width: 50px;">女
+				</a>
+				<button onclick="add()" font-size=20px  style=height:30px; style="width: 50px;">增加按钮</button>
+
+		<table id="t" height="350px" width="900px" background-color="green">
+			<tr class="t1">
+				<th>编号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>操作</th>
+			</tr>
+			<tr class="t1">
+				<th>1</th>
+				<th>张三</th>
+				<th>女</th>
+				<th><a href="#" id="ays" onclick="del(this)">删除</a></th>
+			</tr>
+			<tr class="t1">
+				<th>2</th>
+				<th>李四</th>
+				<th>男</th>
+				<th><a href="#" id="ays" onclick="del(this)">删除</a></th>
+			</tr>
+			<tr class="t1">
+				<th>3</th>
+				<th>王五</th>
+				<th>男</th>
+				<th><a href="#" id="ays" onclick="del(this)">删除</a></th>
+			</tr>
+		</table>
+	</body>
+	</html
