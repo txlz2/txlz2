@@ -1,126 +1,91 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html>
 
 	<head>
-		<meta charset="UTF-8">
-		<title>Document</title>
-		<script type="text/javascript">
-    		window.onload=function(){
-    			var tab=document.getElementById("t");
-    			var body=document.getElementsByTagName("body");
-    			var trs=document.getElementsByTagName("tr");
-    			for(var i=0;i<trs.length;i++){
-    				trs[i].className=(i%2==0)?"even":"odd";
-    			}
-    		}
-    		 function add() {
-				var tab = document.getElementById('t');
-				var rowIndex = tab.rows.length + 1;
-
-				//添加一行;
-				var tr = tab.insertRow();
-				var name1 = document.getElementById("xingming").value;
-				var sex1 = document.getElementById("sex").value;
-				tr.onmouseover = tr.className = "displayStyle";
-				tr.onmouseout = tr.className = "hideStyle";
-				tr.onclick = function() {
-					this.className = "onClickChangeStyle(this)";
-				}
-
-				var th1 = tr.insertCell();
-				var th2 = tr.insertCell();
-				var th3 = tr.insertCell();
-				var th4 = tr.insertCell();
-
-				th1.innerHTML = "" + rowIndex-1;
-				th2.innerHTML = name1;
-				th3.innerHTML = sex1;
-				th4.innerHTML = "<a href='#' onclick='del(this)'>删除</a>";
-				initRows(tab);
-			}
-
-    		function del(obj) {
-				var tab = document.getElementById('t');
-
-            var tr = obj.parentNode.parentNode;
-
-				if(tab.rows.length > 1) {
-					//tr.parentNode，指的是，table对象;移除子节点;
-					tr.parentNode.removeChild(tr);
-				}
-				//重新生成行号;
-				initRows(document.getElementById('t'));
-			}
-    </script>
-		<style type="text/css">
-			td {
-				width: 120px;
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#box {
+				width: 600px;
+				overflow: auto;
+				margin: 0 auto;
 			}
 			
-			.t1 {
-				width: 100px;
-				height: 60px;
-				margin: auto auto;
-				border: 5px solid;
-				background-color: pink;
-			}
-			.c2 {
-				width: 110px;
-				height: 50px;
-				margin-top: -50px;
-				margin-left: 530px;
-				/*	background-color: #F5DEB3;*/
+			#mark {
+				width: 600px;
+				overflow: auto;
+				margin: 0 auto;
 			}
 			tr:first-child{
 				color: white;
 				background-color:palevioletred !important;
 			}
 			tr:nth-child(2n){
-				background-color: pink;
+				background-color: fuchsia;
 			}
 			tr:nth-child(2n+1){
-				background-color: plum;
+				background-color: dodgerblue;
 			}
-
 		</style>
+		<script type="text/javascript">
+			var count = 1; //全局变量
+			function createTr() {
+				document.getElementById("table");
+				tr = document.createElement("tr");
+				table.appendChild(tr);
+
+				td1 = document.createElement("td");
+				tr.appendChild(td1);
+				td1.innerHTML = count;
+
+				td2 = document.createElement("td");
+				tr.appendChild(td2);
+				newSpan = document.createElement("span");
+				td2.appendChild(newSpan);
+				newSpan.innerHTML = document.getElementById("name").value;
+				newSpan.addEventListener("mouseover",function(){this.style.color = "red";});
+				newSpan.addEventListener("mouseout",function(){this.style.color = "black";});
+
+				td3 = document.createElement("td");
+				tr.appendChild(td3);
+				var b1 = document.getElementsByName("性别");
+				for(var i = 0; i < b1.length; i++) {
+					if(b1[i].checked == true)
+						td3.innerHTML = b1[i].value;
+				}
+				td4 = document.createElement("td");
+				tr.appendChild(td4);
+				td4.innerHTML = "<a href='javascript:void(0);' onclick='delTr(this)'>删除</a>"
+
+				count++;
+			}
+	
+			function delTr(obj) {
+				var table = obj.parentNode.parentNode.parentNode;
+				var tr = obj.parentNode.parentNode;
+				table.removeChild(tr);
+			}
+		</script>
 	</head>
 
 	<body>
-		<a >姓名:
-			<input type="text" id="xingming" style=height:30px; style="width: 50px;">
-		</a>
-		<a id="sex" >性别:
-					<input type="radio" id="sex" name="sex" value="男" / style=height:30px; style="width: 50px;">男
-					<input type="radio" id="sex" name="sex" value="女" / style=height:30px; style="width: 50px;">女
-				</a>
-				<button onclick="add()" font-size=20px  style=height:30px; style="width: 50px;">增加按钮</button>
-
-		<table id="t" height="350px" width="900px" background-color="green">
-			<tr class="t1">
-				<th>编号</th>
-				<th>姓名</th>
-				<th>性别</th>
-				<th>操作</th>
-			</tr>
-			<tr class="t1">
-				<th>1</th>
-				<th>张三</th>
-				<th>女</th>
-				<th><a href="#" id="ays" onclick="del(this)">删除</a></th>
-			</tr>
-			<tr class="t1">
-				<th>2</th>
-				<th>李四</th>
-				<th>男</th>
-				<th><a href="#" id="ays" onclick="del(this)">删除</a></th>
-			</tr>
-			<tr class="t1">
-				<th>3</th>
-				<th>王五</th>
-				<th>男</th>
-				<th><a href="#" id="ays" onclick="del(this)">删除</a></th>
-			</tr>
+		<div id="box">
+			<label style="color: red;" >姓名:</label><input type="text" id="name" / style="background-color: plum">
+			<label style="color:yellowgreen">性别</label><input type="radio" name="性别" id="sex" checked="checked"
+				 value="男" / style="color: aqua;">男<input type="radio" name="性别" id="sex" value="女" / style="color: aquamarine;">女
+			<button onclick="createTr()" id="button" style="color: aqua;">增加按钮</button>
+		</div>
+		</br>
+		<div id="mark">
+			<table id="table">
+				<tr style="background-color: black; color: white;">
+					<th width="100px" id="id">编号</th>
+					<th width="100px">姓名</th>
+					<th width="100px">性别</th>
+					<th width="100px" id="del">操作</th>
 		</table>
+		</div>
 	</body>
-	</html
+
+<ml>
+
