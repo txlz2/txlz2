@@ -1,276 +1,91 @@
-*{margin:0;padding:0;list-style:none;}
-body{background:#d45a00;font-family:microsoft yahei;}
-@-webkit-keyframes cir1 {
-  0% {
-    -webkit-transform: rotateY(0deg) rotateZ(10deg);
-  }
-  100% {
-    -webkit-transform: rotateY(-360deg) rotateZ(10deg);
-  }
-}
-@keyframes cir1 {
-  0% {
-    transform: rotateY(0deg) rotateZ(10deg);
-  }
-  100% {
-    transform: rotateY(-360deg) rotateZ(10deg);
-  }
-}
-@-webkit-keyframes cir2 {
-  0% {
-    -webkit-transform: rotateY(-60deg) rotateZ(10deg);
-  }
-  100% {
-    -webkit-transform: rotateY(-420deg) rotateZ(10deg);
-  }
-}
-@keyframes cir2 {
-  0% {
-    transform: rotateY(-60deg) rotateZ(10deg);
-  }
-  100% {
-    transform: rotateY(-420deg) rotateZ(10deg);
-  }
-}
-@-webkit-keyframes cir3 {
-  0% {
-    -webkit-transform: rotateY(-120deg) rotateZ(10deg);
-  }
-  100% {
-    -webkit-transform: rotateY(-480deg) rotateZ(10deg);
-  }
-}
-@keyframes cir3 {
-  0% {
-    transform: rotateY(-120deg) rotateZ(10deg);
-  }
-  100% {
-    transform: rotateY(-480deg) rotateZ(10deg);
-  }
-}
-@-webkit-keyframes cir4 {
-  0% {
-    -webkit-transform: rotateY(-180deg) rotateZ(10deg);
-  }
-  100% {
-    -webkit-transform: rotateY(-540deg) rotateZ(10deg);
-  }
-}
-@keyframes cir4 {
-  0% {
-    transform: rotateY(-180deg) rotateZ(10deg);
-  }
-  100% {
-    transform: rotateY(-540deg) rotateZ(10deg);
-  }
-}
-@-webkit-keyframes cir5 {
-  0% {
-    -webkit-transform: rotateY(-240deg) rotateZ(10deg);
-  }
-  100% {
-    -webkit-transform: rotateY(-600deg) rotateZ(10deg);
-  }
-}
-@keyframes cir5 {
-  0% {
-    transform: rotateY(-240deg) rotateZ(10deg);
-  }
-  100% {
-    transform: rotateY(-600deg) rotateZ(10deg);
-  }
-}
-@-webkit-keyframes cir6 {
-  0% {
-    -webkit-transform: rotateY(-300deg) rotateZ(10deg);
-  }
-  100% {
-    -webkit-transform: rotateY(-660deg) rotateZ(10deg);
-  }
-}
-@keyframes cir6 {
-  0% {
-    transform: rotateY(-300deg) rotateZ(10deg);
-  }
-  100% {
-    transform: rotateY(-660deg) rotateZ(10deg);
-  }
-}
-@keyframes cir {
-  0% {
-    transform: rotateX(80deg) rotateY(-10deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(80deg) rotateY(-10deg) rotateZ(-360deg);
-  }
-}
-@keyframes cir_p {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(-360deg);
-  }
-}
-@-webkit-keyframes cir {
-  0% {
-    -webkit-transform: rotateX(80deg) rotateY(-10deg) rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateX(80deg) rotateY(-10deg) rotateZ(-360deg);
-  }
-}
-@-webkit-keyframes cir_p {
-  0% {
-    -webkit-transform: rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(-360deg);
-  }
-}
+@charset "utf-8";
+body,html{ height: 100%;}
+body{ padding:0px; margin:0px; font-size:12px; color:#333; font-family:'微软雅黑';  background: #f7f7f7;}
+*{ padding:0; margin:0;}
+ul,li,dl,dd{ list-style-type:none; margin:0; padding:0;}
+img { border-style: none; margin:0; padding:0;}
+p{ margin:0; padding:0;}
+a{text-decoration:none;color:#333;}
+a:hover{ text-decoration:none; color:#0087c7;}
+input,button,select,textarea{outline:none; font-family:'微软雅黑';}
+.show{display: block;}
+.hide{display: none;}
 
-.u_p3d{
-    -webkit-transform-style: preserve-3d !important;
-    transform-style: preserve-3d !important;
-}
+.frame-wrapper{ width: 100%; height: 100%; position: relative;}
+.frame-left{ position: absolute; left: 0; top: 0; bottom: 0; width: 200px; height: 100%; background: #444c63;}
+.frame-right{position: absolute; left: 200px; right: 0; top: 0; bottom: 0; background: #f5f5f5;}
 
-.ui_base {
-    position: relative;
-    width: 400px;
-    height: 0px;
-    margin:100px auto;
-    -webkit-perspective: 1000px;
-    -webkit-perspective-origin: 50% 0%;
-    perspective: 1000px;
-    perspective-origin: 50% 0%;
-}
-.base{
-	-webkit-transform: rotateX(80deg) rotateY(-10deg);
-    transform: rotateX(80deg) rotateY(-10deg);
-    position: relative;
-    width: 350px;
-    height: 350px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    animation: cir 10s linear 0s infinite;
-}
-.ball_base {
-    -webkit-transform-origin: 225px 0px;
-    transform-origin: 225px 0px;
-    position: absolute;
-    top: 175px;
-    left: -50px;
-    width: 225px;
-    height: 127px;
-}
-.ball{
-	-webkit-transition:all 2s ease-out 0ms;
-	transition:all 2s ease-out 0ms;
-	-webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-	position: absolute;
-	width: 90px;
-	height: 90px;
-	line-height: 90px;
-	text-align: center;
-	background-image: url(../images/ball_around.png);
-	background-size: 100% 100%;
-	left: 0px;
-	top: 0px;
-	color: rgba(255, 255, 255, 0);
-	font-size: 12px;
-	opacity: 1;
-	overflow: hidden;
-}
-		
-.ball_c {
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    position: absolute;
-    width: 157px;
-    height: 157px;
-    line-height: 157px;
-    text-align: center;
-    background-image: url(../images/ball_center.png);
-    left: 90px;
-    top: 50px;
-    color: #fff;
-    font-size: 24px;
-}
+.f-logo{ width: 100%; height: 60px; line-height: 60px; text-align: center; color: #fff; background: #18aef5; font-size: 20px; font-weight: bold; letter-spacing: 1px;}
+.f-nav{ width: 100%; font-size: 12px;}
+.f-navList{ padding-left:20px ; height: auto;}
+.f-navOne{ width: 100%; height: 40px; overflow: hidden; cursor: pointer; position: relative;}
+.f-navOne-img{ float: left; padding-top:8px ;}
+.f-navOne-img img{ height: 24px; width: auto;}
+.f-navOne-title{ display: block; float: left; height: 40px; line-height: 40px; color: #c2c2c2; margin-left: 10px;}
+.f-navOne-down{ position: absolute; right: 10px; top: 17px;}
+.f-navOne-down img{ height: 10px; width: auto;}
+.f-navOne-up{ position: absolute; right: 10px; top: 17px;}
+.f-navOne-up img{ height: 10px; width: auto;}
+.f-navOne .f-navOne-title:hover{color: #fff; }
 
-.pan {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/c.png");
-    background-size: 100% 100%;
-    -webkit-animation: cir_p 5s linear 0s infinite;
-	animation: cir_p 5s linear 0s infinite;
-}
+.f-navTwoWrapper{ padding-left: 33px;}
+.f-navTwo{width: 100%; height: 40px; overflow: hidden; cursor: pointer; position: relative;}
+.f-navTwo-img{float: left; padding-top: 9px;}
+.f-navTwo-img img{ height: 22px; width: auto;}
+.f-navTwo-title{ display: block; float: left; height: 40px; line-height: 40px; color: #c2c2c2; margin-left: 10px; color: #fff;}
+.f-navTwo-down{ position: absolute; right: 10px; top: 15px;}
+.f-navTwo-down img{ height: 10px; width: auto;}
+.f-navTwo-up{ position: absolute; right: 10px; top: 15px;}
+.f-navTwo-up img{ height: 10px; width: auto;}
 
-.ball {
-    color: #fff;
-    opacity: 1;
-}
+.f-navThree{ padding-left:32px ;}
+.f-navThree dd p{ display: block; width: 100%; height: 30px; line-height: 30px; color: #fff; cursor: pointer;}
+.f-navThree dd p:hover{ color: #21a7e6;}
 
-.ball_1 .ball {
-    transform: rotateY(10deg) rotateZ(10deg);
-    animation: cir1 10s linear 0s infinite;
-    -webkit-transition-delay: 1100ms !important;
-	transition-delay: 1100ms !important;
-}
-.ball_2 .ball {
-    -webkit-animation: cir2 10s linear 0s infinite;
-		animation: cir2 10s linear 0s infinite;
-		-webkit-transition-delay: 900ms !important;
-	transition-delay: 900ms !important;
-}
-.ball_3 .ball {
-    -webkit-animation: cir3 10s linear 0s infinite;
-	animation: cir3 10s linear 0s infinite;
-	-webkit-transition-delay: 700ms !important;
-	transition-delay: 700ms !important;
-}
-.ball_4 .ball {
-	-webkit-animation: cir4 10s linear 0s infinite;
-	animation: cir4 10s linear 0s infinite;
-	-webkit-transition-delay: 500ms !important;
-	transition-delay: 500ms !important;
-}
-.ball_5 .ball {
-	-webkit-animation: cir5 10s linear 0s infinite;
-	animation: cir5 10s linear 0s infinite;
-	-webkit-transition-delay: 300ms !important;
-	transition-delay: 300ms !important;
-}
-.ball_6 .ball {
-    -webkit-animation: cir6 10s linear 0s infinite;
-	animation: cir6 10s linear 0s infinite;
-	-webkit-transition-delay: 100ms !important;
-		transition-delay: 100ms !important;
-}
+.f-navHover .f-navTwo-title{ color: #fff;}
 
-.ball_1 {
-    -webkit-transform: rotateX(-90deg) rotateY(0deg) translateY(-70px);
-    transform: rotateX(-90deg) rotateY(0deg) translateY(-70px);
-}
-.ball_2 {
-    -webkit-transform: rotateX(-90deg) rotateY(60deg) translateY(-70px);
-    transform: rotateX(-90deg) rotateY(60deg) translateY(-70px);
-}
-.ball_3 {
-    -webkit-transform: rotateX(-90deg) rotateY(120deg) translateY(-70px);
-    transform: rotateX(-90deg) rotateY(120deg) translateY(-70px);
-}
-.ball_4 {
-    -webkit-transform: rotateX(-90deg) rotateY(180deg) translateY(-70px);
-    transform: rotateX(-90deg) rotateY(180deg) translateY(-70px);
-}
-.ball_5 {
-    -webkit-transform: rotateX(-90deg) rotateY(240deg) translateY(-70px);
-	transform: rotateX(-90deg) rotateY(240deg) translateY(-70px);
-}
-.ball_6 {
-	-webkit-transform: rotateX(-90deg) rotateY(300deg) translateY(-70px);
-    transform: rotateX(-90deg) rotateY(300deg) translateY(-70px);
-}
+.f-header{ width: 100%; height: 60px; overflow: hidden; border-bottom: 1px solid #f0f0f0; background: #fff;}
+.f-menuBtn{ float: left; width: 60px; height: 40px; text-align: center; padding-top: 20px; cursor: pointer;}
+.f-menuBtn img{ width: 20px; height: auto;}
+.f-headerNav{ float: right; height: 60px; width: auto;}
+.f-headerNav li{ float: left; border-left: 1px solid #f0f0f0;}
+.f-headerNav li a{ display: block; padding: 0 20px; text-align: center; line-height: 60px; color: #999999; cursor: pointer;}
+.f-headerNav li a:hover{color: #7e7d7d;}
+.f-topMenu{width: 100%; min-height: 40px; border-bottom: 1px solid #f0f0f0; background: #fff; position: relative;}
+.f-topMenu-ul{ overflow: hidden; padding-right: 120px;}
+.f-topMenu-ul li{ float: left; min-width: 65px; height: 40px; line-height: 40px; padding:0 10px ; cursor: pointer; position: relative;}
+.f-topMenu-ul p{ display: block; float: left; line-height: 40px;}
+.f-topMenu-moreOut{ position: absolute; right: 10px; top: 8px; border: 1px solid #D0D0D0; border-radius:5px ; padding-left:8px; padding-right: 20px; height: 24px; overflow: hidden; background: #fff; cursor: pointer; line-height: 24px; text-align: center; background: url(../images/icon-cha.png) 60px center no-repeat; color: #9F9F9F; font-size: 12px;}
+.f-topMenu-moreOut:hover{background: url(../images/icon-chaHover.png) 60px center no-repeat #fd4d2b; border: 1px solid #fd4d2b; color: #fff;}
+.f-topMenu-index{ width: 65px; text-align: center!important;}
+.f-topMenu-hover{height: 38px!important; border-bottom: 2px solid #00b5f9; color: #00b5f9!important; line-height: 40px;}
+.f-topMenu-outWrapper{ float: right; width: 25px; height: 30px; position: relative;}
+.f-topMenu-out{ position: absolute; top: 10px; right: 0; text-align: center; padding: 5px; background: none; border-radius:3px ; z-index: 999;}
+.f-topMenu-out img{ width: 10px; height: auto;}
+.f-topMenu-outHover{background: #fd4d2b;}
+
+.f-body{ position: absolute; left: 5px; right: 0px; top: 107px; bottom: 5px; background: #f5f5f5; overflow: auto; z-index: 1000}
+.f-item{ width: 100%; height: 100%;}
+.f-frame{ width: 100%; height: 100%; border: 0; outline: 0;}
+/*树*/
+.f-treeListWrapper{ width: auto; height: auto;position: relative;} 
+.f-treeList{ min-width: 100px; min-height: 20px; position: relative; padding-left: 16px;}
+.f-treeList-line{ position: absolute; width: 1px; top: 20px; bottom: 0px; left: 22px; background:url(../images/tree-line.png); background-repeat:repeat-y;}
+.f-treeList-lineShu{ position: absolute; width: 1px; top: 0px; bottom: 0px; left: 21px; background:url(../images/tree-line.png); background-repeat:repeat-y;}
+.f-treeList-lineShuEnd{ position: absolute; width: 1px; top: 0px; bottom: 10px; left: 21px; background:url(../images/tree-line.png); background-repeat:repeat-y;}
+.f-treeList-lineEnd{ float:left; width: 8px; height: 20px; background:url(../images/tree-lineEnd.png) no-repeat; margin-left: 7px;}
+.f-treeList-top{ width: 100%; height: 20px;position: relative;}
+.f-treeList-old{ float: left; padding-top: 5px; width:10px; height:10px; cursor: pointer; margin-right: 5px;}
+.f-treeList-title{ float: left; overflow: hidden;}
+.f-treeList-radio{float: left; padding-top:3px; margin-right: 5px; cursor: pointer;}
+.f-treeList-radio input{ display: none;}
+.f-treeList-titleImg{ float: left; padding-top:2px;}
+.f-treeList-titleP{ display: block; float: left; margin-left: 5px; line-height: 20px;}
+
+.f-iconBi{ display: block; width: 16px; height: 16px; background: url(../images/tree-bi.png) center no-repeat;}
+.f-iconKai{ display: block; width: 16px; height: 16px; background: url(../images/tree-kai.png) center no-repeat;}
+.f-iconEnd{ display: block; width: 16px; height: 16px; background: url(../images/tree-wen.png) center no-repeat;}
+.f-iconJia{ display: block; width: 11px; height: 11px; background: url(../images/tree-jia.png) no-repeat; background-color:#fff ;}
+.f-iconJian{ display: block; width: 11px; height: 11px; background: url(../images/tree-jian.png) no-repeat; background-color:#fff ;}
+.f-iconRadio{ display: block; width: 14px; height: 14px; background: url(../images/tree-radio.png) no-repeat; background-color:#fff ;}
+.f-iconRadioTrue{ display: block; width: 14px; height: 14px; background: url(../images/tree-radioHover.png) no-repeat; background-color:#fff ;}
