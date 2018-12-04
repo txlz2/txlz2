@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery响应式图片卡片重叠旋转轮播切换特效</title>
+
+<link rel="stylesheet" type="text/css" href="css/style3.css" />
+
+</head>
+<body ><script src="/demos/googlegg.js"></script>
+
+<div id="banner" style="background-color: lemonchiffon;">
+	<div id="carousel">
+		<img src="img/QQ图片20181203172816.png" data-url="#">
+		<img src="img/QQ图片20181203171046.jpg" data-url="#">
+		<img src="img/QQ图片20181203171058.jpg" data-url="#">
+		<img src="img/QQ图片20181203171109.jpg" data-url="#">
+		<img src="img/QQ图片20181203171116.jpg" data-url="#">
+		<img src="img/QQ图片20181203171130.jpg" data-url="#">
+		<img src="img/QQ图片20181203171139.jpg" data-url="#">
+		<img src="img/QQ图片20181203171145.png" data-url="#">
+	</div>
+</div>
+
+<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/slider.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	$(function() {
+		$('#carousel').carousel({
+			curDisplay: 0, //默认索引
+			autoPlay: false, //是否自动播放
+			interval: 3000 //间隔时间
+		});
+	});
+</script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>在悠闲中放松心情，忘却烦恼，享受快乐人生</p>
+<p>在悠闲中调适心态，感怀真情，感悟人生真谛。</p>
+<p><a href="#">悠闲”HOME“</a>欢迎您的到来！</p>
+<p>预约电话：1234567</p>
+<p> <a href="10-3、4.html">CLICK&nbsp;市场与销售</a></p>
+</div>
+</body>
+</html>
